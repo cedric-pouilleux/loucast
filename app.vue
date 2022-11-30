@@ -45,6 +45,7 @@ body {
 .page {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   background: rgb(187,187,187);
   background: radial-gradient(circle, rgba(187,187,187,0) 0%, rgba(255,255,255,1) 100%);
 }
@@ -53,24 +54,13 @@ body {
   color: #555;
 }
 .wrapper {
-  width: 400px;
   margin: auto;
   text-align: center;
-  padding: 20px 40px;
-  border-radius: 100px;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-
-  div {
-    margin-left: 20px;
-  }
-
-  .left {
-    display: flex;
-  }
 }
 
 h1 {
