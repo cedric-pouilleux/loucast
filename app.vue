@@ -10,25 +10,25 @@
       <div class="social">
         <a href="https://www.instagram.com/loucasscouille">
           <Icon
-            size="30px"
+            size="20px"
             name="entypo-social:instagram"
           />
         </a>
         <a href="https://soundcloud.com/nothingbutthegroove">
           <Icon
-            size="30px"
+            size="20px"
             name="entypo-social:soundcloud"
           />
         </a>
         <a href="https://soundcloud.com/nothingbutthegroove">
           <Icon
-            size="30px"
+            size="20px"
             name="entypo-social:facebook"
           />
         </a>
         <a href="mailto:contact@loucast.fr">
           <Icon
-            size="30px"
+            size="20px"
             name="mdi:email-variant"
           />
         </a>
@@ -37,11 +37,7 @@
   </div>
 </template>
 
-<style lang="scss">
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-}
+<style scoped lang="scss">
 .page {
   height: 100vh;
   width: 100vw;
@@ -61,13 +57,6 @@ body {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-h1 {
-  letter-spacing: -6px;
-  font-size: 4em;
-  font-weight: 700;
-  color: #333;
 }
 
 .social {

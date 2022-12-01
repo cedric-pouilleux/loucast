@@ -1,24 +1,19 @@
 import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
-  modules: ['nuxt-icon'],
   css: [
-    '@/assets/main.scss',
-    '@/assets/reset.scss'
+    '@/assets/fonts/space-grotesk/SpaceGrotesk.scss',
+    '@/assets/fonts/open-sans/OpenSans.scss',
+    '@/assets/reset.scss',
+    '@/assets/main.scss'
   ],
   experimental: {
     reactivityTransform: true,
     viteNode: false
   },
-  // @ts-ignore
-  buildModules: [
-    '@nuxtjs/google-fonts'
+  modules: [
+    'nuxt-icon'
   ],
-  googleFonts: {
-    families: {
-      'Open+Sans': true
-    }
-  },
   hooks: {
     'vite:extendConfig' (config, { isServer }) {
       if (isServer) {
