@@ -2,7 +2,7 @@
   <div class="page">
     <div class="wrapper">
       <div>
-        <h1>LOUCAST</h1>
+        <h1>LØUCAST</h1>
         <p class="description">
           Coming soon !
         </p>
