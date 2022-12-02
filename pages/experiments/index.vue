@@ -1,11 +1,10 @@
 <template>
-  <div class="experiment-page">
-    xp
-  </div>
+  <client-only>
+    <experiments-pages />
+  </client-only>
 </template>
 
 <script setup lang="ts">
-useHead({
-  title: 'Løucast - Experiments'
-})
+import ExperimentsPages from '~/components/experiments-pages/ExperimentsPages.vue'
+console.log('test')
 </script>

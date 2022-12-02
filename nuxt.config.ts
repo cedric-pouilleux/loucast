@@ -1,4 +1,5 @@
 import eslintPlugin from 'vite-plugin-eslint'
+import glsl from 'vite-plugin-glsl'
 
 export default defineNuxtConfig({
   css: [
@@ -26,7 +27,8 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
-      eslintPlugin()
+      eslintPlugin(),
+      glsl()
     ]
   }
 })
