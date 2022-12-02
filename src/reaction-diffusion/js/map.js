@@ -1,5 +1,4 @@
 import { simulationUniforms } from './uniforms'
-import { rebuildUI } from './ui'
 import parameterValues from './parameterValues'
 import parameterMetadata from './parameterMetadata'
 
@@ -62,7 +61,6 @@ export function setupMap () {
 
     parameterValues.f = newFeedKillValues.f
     parameterValues.k = newFeedKillValues.k
-    rebuildUI()
 
     simulationUniforms.f.value = newFeedKillValues.f
     simulationUniforms.k.value = newFeedKillValues.k
