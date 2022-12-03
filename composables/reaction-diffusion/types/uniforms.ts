@@ -1,8 +1,8 @@
-import { Vector2, Vector4 } from 'three'
+import { DataTexture, Texture, Vector2, Vector4, WebGLRenderTarget } from 'three'
 
 export type UniformsProp = {
     type?: 't' | 'i' | 'v2' | 'v4'| 'f' | 'vec2' | 'v4',
-    value: number | undefined | Vector2 | Vector4 | null
+    value: number | undefined | Vector2 | Vector4 | null | DataTexture | WebGLRenderTarget | Texture
 }
 
 export type SimulationUniforms = {

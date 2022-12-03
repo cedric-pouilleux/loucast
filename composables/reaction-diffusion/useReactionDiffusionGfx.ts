@@ -43,7 +43,7 @@ export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas:
   function setupRenderTargets (): void {
     renderTargets.value = []
     for (let i = 0; i < 2; i++) {
-      const nextRenderTarget: WebGLRenderTarget = new THREE.WebGLRenderTarget(params.canvas.width, params.canvas.width, {
+      const nextRenderTarget: WebGLRenderTarget = new THREE.WebGLRenderTarget(params.canvas.width, params.canvas.height, {
         minFilter: THREE.LinearFilter,
         magFilter: THREE.LinearFilter,
         format: THREE.RGBAFormat,
@@ -75,6 +75,7 @@ export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas:
   }
 
   function resetTextureSizes (): void {
+    console.log($canvas.clientWidth)
     params.canvas.width = $canvas.clientWidth * params.canvas.scale
     params.canvas.height = $canvas.clientHeight * params.canvas.scale
     setupRenderTargets()
@@ -103,9 +104,7 @@ export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas:
     const texture = new THREE.DataTexture(initialData, params.canvas.width, params.canvas.height, THREE.RGBAFormat, THREE.FloatType)
     texture.flipY = true
     texture.needsUpdate = true
-
     passthroughUniforms.textureToDisplay.value = texture
-
     displayMesh.material = passthroughMaterial
 
     for (let i = 0; i < 2; i++) {
