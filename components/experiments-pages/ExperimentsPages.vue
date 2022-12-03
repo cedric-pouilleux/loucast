@@ -1,7 +1,7 @@
 <template>
   <div class="experiment-page">
     <div class="wrapper">
-      <v-tweakpane class="panel" :pane="{title: 'Edit'}" @on-pane-created="paneCreated" />
+      <v-tweakpane class="panel" :pane="{title: 'Configuration'}" @on-pane-created="paneCreated" />
     </div>
     <div ref="container" class="render" />
     <canvas ref="bufferCanvas" style="display: none;" />
@@ -42,6 +42,8 @@ function paneCreated (pane: Pane) {
     min: 0.060,
     max: 0.065
   })
+  pane.addInput(params, 'mouseActive')
+  pane.addInput(params.gradientColors, 'color2RGB')
   pane.addButton({
     title: 'Reload'
   }).on('click', () => {
@@ -56,7 +58,7 @@ function paneCreated (pane: Pane) {
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 200px;
+  width: 250px;
 }
 .render {
   position: fixed;
@@ -72,4 +74,5 @@ function paneCreated (pane: Pane) {
   z-index: 10;
   background: radial-gradient(circle, rgba(187, 187, 187, 0) 0%, rgb(0, 0, 0) 100%);
 }
+
 </style>

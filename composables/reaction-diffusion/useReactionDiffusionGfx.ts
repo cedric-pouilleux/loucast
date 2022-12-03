@@ -51,7 +51,8 @@ export function useReactionDiffusionGfx (payload : Payload): ReactionDiffusionGf
     if ($container) {
       $container.appendChild($canvas)
     }
-    window.addEventListener('resize', () => resetTextureSizes(), false)
+    window.addEventListener('mousemove', mouseMove)
+    window.addEventListener('resize', resetTextureSizes)
     resetTextureSizes()
   }
 
@@ -65,6 +66,13 @@ export function useReactionDiffusionGfx (payload : Payload): ReactionDiffusionGf
         type: THREE.FloatType
       })
       renderTargets.value.push(nextRenderTarget)
+    }
+  }
+
+  function mouseMove (e: Event) {
+    if (simulationUniforms && params.mouseActive) {
+      simulationUniforms.mousePosition.value.x = e.offsetX / params.canvas.width
+      simulationUniforms.mousePosition.value.y = 1 - e.offsetY / params.canvas.height
     }
   }
 
@@ -83,6 +91,17 @@ export function useReactionDiffusionGfx (payload : Payload): ReactionDiffusionGf
 
     simulationUniforms.f.value = params.f
     simulationUniforms.k.value = params.k
+
+    if (params.mouseActive) {
+      simulationUniforms.brushRadius.value = 30
+    }
+
+    displayUniforms.colorStop2.value = new THREE.Vector4(
+      params.gradientColors.color2RGB.r / 255,
+      params.gradientColors.color2RGB.g / 255,
+      params.gradientColors.color2RGB.b / 255,
+      params.gradientColors.color2Stop
+    )
     displayUniforms.time.value = new THREE.Clock().getElapsedTime()
     displayMesh.material = displayMaterial
 

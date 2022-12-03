@@ -63,6 +63,7 @@ export type StyleMap = {
 }
 
 export type ReactionDiffusionParams = {
+    mouseActive: boolean,
     f: number,
     k: number,
     dA: number,
