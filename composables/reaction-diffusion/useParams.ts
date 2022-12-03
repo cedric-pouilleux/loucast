@@ -6,7 +6,7 @@ export function useParams () {
     k: 0.062,
     dA: 0.2097,
     dB: 0.105,
-    timestep: 1.0,
+    timestep: 0.5,
     renderingStyle: '',
     gradientColors: {
       color1RGB: { r: 0, g: 0, b: 0 },

@@ -75,15 +75,16 @@ export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas:
   }
 
   function resetTextureSizes (): void {
-    console.log($canvas.clientWidth)
-    params.canvas.width = $canvas.clientWidth * params.canvas.scale
-    params.canvas.height = $canvas.clientHeight * params.canvas.scale
+    params.canvas.width = window.innerWidth * params.canvas.scale
+    params.canvas.height = window.innerHeight * params.canvas.scale
     setupRenderTargets()
     simulationUniforms.resolution.value = new THREE.Vector2(params.canvas.width, params.canvas.height)
+    $canvas.style.width = '100%'
     if ($bufferCanvas) {
       $bufferCanvas.width = params.canvas.width
       $bufferCanvas.height = params.canvas.height
     }
+    drawFirstFrame()
   }
 
   function drawFirstFrame (): void {

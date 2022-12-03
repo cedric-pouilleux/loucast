@@ -1,7 +1,7 @@
 <template>
   <div class="experiment-page">
     <div ref="container" />
-    <canvas ref="bufferCanvas" style="display: none;" width="100%" height="100%" />
+    <canvas ref="bufferCanvas" style="display: none;" />
   </div>
 </template>
 
