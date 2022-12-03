@@ -93,7 +93,7 @@ export function useShapes (params: ReactionDiffusionParams): UseShapes {
     },
     renderingStyle: {
       type: 'i',
-      value: 0
+      value: params.renderingStyle
     },
 
     // Gradient color stops - RGB channels represent real color values, but A channel is for B threshold

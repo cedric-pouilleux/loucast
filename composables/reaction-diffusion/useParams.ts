@@ -2,28 +2,28 @@ import { ReactionDiffusionParams } from '~/composables/reaction-diffusion/types/
 
 export function useParams () {
   return reactive<ReactionDiffusionParams>({
-    f: 0.035,
-    k: 0.062,
+    f: 0.0540,
+    k: 0.0620,
     dA: 0.2097,
     dB: 0.105,
-    timestep: 0.5,
-    renderingStyle: '',
+    timestep: 1,
+    renderingStyle: 1,
     gradientColors: {
       color1RGB: { r: 0, g: 0, b: 0 },
-      color2RGB: { r: 0, g: 255, b: 0 },
-      color3RGB: { r: 255, g: 255, b: 0 },
-      color4RGB: { r: 255, g: 0, b: 0 },
-      color5RGB: { r: 100, g: 0, b: 0 },
+      color2RGB: { r: 255, g: 0, b: 0 },
+      color3RGB: { r: 0, g: 0, b: 0 },
+      color4RGB: { r: 0, g: 0, b: 0 },
+      color5RGB: { r: 0, g: 0, b: 0 },
       color1Stop: 0,
-      color2Stop: 0.2,
+      color2Stop: 0.08,
       color3Stop: 0.21,
-      color4Stop: 0.4,
-      color5Stop: 0.6,
+      color4Stop: 0.46,
+      color5Stop: 0.60,
       color1Enabled: true,
       color2Enabled: true,
-      color3Enabled: true,
-      color4Enabled: true,
-      color5Enabled: true
+      color3Enabled: false,
+      color4Enabled: false,
+      color5Enabled: false
     },
     hsl: {
       from: { min: 0.0, max: 1.0 },

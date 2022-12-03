@@ -68,7 +68,7 @@ export type ReactionDiffusionParams = {
     dA: number,
     dB: number,
     timestep: number,
-    renderingStyle: string,
+    renderingStyle: number,
     gradientColors: GradientColors,
     hsl: Hsl,
     canvas: Canvas,
