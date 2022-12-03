@@ -1,6 +1,7 @@
 <template>
   <div class="experiment-page">
-    <div ref="container" />
+    <div class="wrapper" />
+    <div ref="container" class="render" />
     <canvas ref="bufferCanvas" style="display: none;" />
   </div>
 </template>
@@ -22,3 +23,20 @@ onMounted(() => {
   obj.drawFirstFrame()
 })
 </script>
+
+<style scoped lang="scss">
+.render {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 10;
+  background: radial-gradient(circle, rgba(187, 187, 187, 0) 0%, rgb(0, 0, 0) 100%);
+}
+</style>
