@@ -2,11 +2,26 @@ import * as THREE from 'three'
 import { WebGLRenderTarget } from 'three'
 import { ref } from 'vue'
 import { useUtils } from '~/composables/reaction-diffusion/useUtils'
-import { useParams } from '~/composables/reaction-diffusion/useParams'
 import { useShapes } from '~/composables/reaction-diffusion/useShapes'
+import { ReactionDiffusionParams } from '~/composables/reaction-diffusion/types/params'
 
-export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas: HTMLCanvasElement) {
-  const params = useParams()
+type Payload = {
+  $bufferCanvas: HTMLCanvasElement | null,
+  $container: HTMLElement | null,
+  params: ReactionDiffusionParams
+}
+
+export type ReactionDiffusionGfx = {
+  setupEnvironment(): void,
+  drawFirstFrame(): void,
+  update(): void
+}
+
+export function useReactionDiffusionGfx (payload : Payload): ReactionDiffusionGfx {
+  const params = payload.params
+  const $bufferCanvas = payload.$bufferCanvas
+  const $container = payload.$container
+
   const { convertPixelsToTextureData } = useUtils()
   const {
     passthroughUniforms,
@@ -24,7 +39,7 @@ export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas:
   const displayMesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), displayMaterial)
   const renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: true })
   const $canvas: HTMLCanvasElement = renderer.domElement
-  const bufferCanvasCtx: CanvasRenderingContext2D | null = $bufferCanvas?.getContext('2d') || null
+  const bufferCanvasCtx: CanvasRenderingContext2D | null = $bufferCanvas?.getContext('2d', { willReadFrequently: true }) || null
   const renderTargets = ref<Array<WebGLRenderTarget>>([])
 
   const nextRenderTargetIndex = computed((): number => currentRenderTargetIndex.value === 0 ? 1 : 0)
@@ -66,6 +81,8 @@ export function useReactionDiffusionGfx ($container: HTMLElement, $bufferCanvas:
       currentRenderTargetIndex.value = nextRenderTargetIndex.value
     }
 
+    simulationUniforms.f.value = params.f
+    simulationUniforms.k.value = params.k
     displayUniforms.time.value = new THREE.Clock().getElapsedTime()
     displayMesh.material = displayMaterial
 

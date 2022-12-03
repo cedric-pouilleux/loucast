@@ -15,6 +15,9 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-icon'
   ],
+  plugins: [
+    { src: '~/plugins/v-tweakpane', mode: 'client' }
+  ],
   hooks: {
     'vite:extendConfig' (config, { isServer }) {
       if (isServer) {

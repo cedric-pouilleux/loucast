@@ -1,7 +1,7 @@
 import { ReactionDiffusionParams } from '~/composables/reaction-diffusion/types/params'
 
-export function useParams () {
-  return reactive<ReactionDiffusionParams>({
+export function useParams (): ReactionDiffusionParams {
+  return reactive({
     f: 0.0540,
     k: 0.0620,
     dA: 0.2097,

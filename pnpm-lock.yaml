@@ -8,26 +8,23 @@ specifiers:
   '@typescript-eslint/parser': ^5.45.0
   eslint: ^8.28.0
   eslint-plugin-vue: ^9.8.0
-  fps: 0.0.3
   jsdom: ^20.0.3
   nuxt: 3.0.0
   nuxt-icon: ^0.1.7
   sass: ^1.56.1
   three: 0.147.0
-  tweakpane: ^3.1.1
   typescript: ^4.9.3
+  v-tweakpane: ^0.2.0
   vite-plugin-eslint: ^1.8.1
   vite-plugin-fonts: ^0.6.0
   vite-plugin-glsl: ^0.5.4
   vitest: ^0.25.3
-  webmidi: 3.0.22
 
 dependencies:
-  fps: 0.0.3
   nuxt: 3.0.0_42f8dc3424362476bea4de371e010708
   nuxt-icon: 0.1.7
   three: 0.147.0
-  tweakpane: 3.1.1
+  v-tweakpane: 0.2.0
 
 devDependencies:
   '@nuxt/test-utils-edge': 3.0.1-rc.0-27828744.aa9aec1
@@ -44,7 +41,6 @@ devDependencies:
   vite-plugin-fonts: 0.6.0
   vite-plugin-glsl: 0.5.4
   vitest: 0.25.3_jsdom@20.0.3+sass@1.56.1
-  webmidi: 3.0.22
 
 packages:
 
@@ -284,13 +280,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
-
-  /@babel/runtime/7.20.6:
-    resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      regenerator-runtime: 0.13.11
-    dev: true
 
   /@babel/standalone/7.20.6:
     resolution: {integrity: sha512-u5at/CbBLETf7kx2LOY4XdhseD79Y099WZKAOMXeT8qvd9OSR515my2UNBBLY4qIht/Qi9KySeQHQwQwxJN4Sw==}
@@ -937,6 +926,14 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
+  /@tweakpane/plugin-essentials/0.1.5_tweakpane@3.1.1:
+    resolution: {integrity: sha512-dt+fwtUEVmBxsVhGNSqtY6dN3rOmxIt3zSA/cSFMs2eBbMrnBTSkJBe2JMXKodTTR6OOFihq6yxyRFqG5wsP3w==}
+    peerDependencies:
+      tweakpane: ^3.1.0
+    dependencies:
+      tweakpane: 3.1.1
+    dev: false
+
   /@types/chai-subset/1.3.3:
     resolution: {integrity: sha512-frBecisrNGz+F4T6bcc+NLeolfiojh5FxW2klu669+8BARtyQv2C/GkNW6FUodVe4BroGMP/wER/YDGc7rEllw==}
     dependencies:
@@ -985,11 +982,6 @@ packages:
     dependencies:
       '@types/webxr': 0.5.0
     dev: true
-
-  /@types/webmidi/2.0.6:
-    resolution: {integrity: sha512-sfS0A5IryqmBrUpcGPipEPeFdpqmZzP6b6lZFxHKgz5n2Vhzh4yJ5P2TvoDUhDjqJyv0Y25ng0Qodgo2Vu08ug==}
-    dev: true
-    optional: true
 
   /@types/webxr/0.5.0:
     resolution: {integrity: sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==}
@@ -2147,12 +2139,6 @@ packages:
     dependencies:
       path-type: 4.0.0
 
-  /djipevents/2.0.6:
-    resolution: {integrity: sha512-2vS7/OVdqocBAIVPbxhk36swE4HnjUL1muoibrkoaCaEAEAF/ww8QbYm55PqlzMp51pvD01wHr/CkZmKZdrI/g==}
-    dependencies:
-      '@babel/runtime': 7.20.6
-    dev: true
-
   /doctrine/2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
@@ -3064,12 +3050,6 @@ packages:
       fetch-blob: 3.2.0
     dev: false
 
-  /fps/0.0.3:
-    resolution: {integrity: sha512-v4mxueP7jf+B7ZU62p3z2p6oAcrlOSeOBH56CB6PW07tF+lWS/W5O0ihPQWRcBqVT307qrqIPEdoCFCP2viDaQ==}
-    dependencies:
-      inherits: 1.0.2
-    dev: false
-
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
@@ -3478,10 +3458,6 @@ packages:
       once: 1.4.0
       wrappy: 1.0.2
 
-  /inherits/1.0.2:
-    resolution: {integrity: sha512-Al67oatbRSo3RV5hRqIoln6Y5yMVbJSIn4jEJNL7VCImzq/kLr7vvb6sFRJXqr8rpHc/2kJOM+y0sPKN47VdzA==}
-    dev: false
-
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
 
@@ -3729,12 +3705,6 @@ packages:
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  /jazz-midi/1.7.6:
-    resolution: {integrity: sha512-vKCmBpotb1y+kEbRlu43COar2LzV46uOTTzyM/zTx5LR7WUTWle7FFC8rphqBVdryW66QtOyUA2N/DWZToBang==}
-    engines: {node: '>=10.0.0'}
-    dev: true
-    optional: true
-
   /jest-worker/26.6.2:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
@@ -3838,15 +3808,6 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.10
     dev: false
-
-  /jzz/1.5.5:
-    resolution: {integrity: sha512-+zaw42xTBFm5KlqykKpD0kFaTZbjYwIQjkfhXsLkPWsg4jDVmgme/WLgFqevHPHJEFlPlUdEYI3RrzN0PBAbCw==}
-    requiresBuild: true
-    dependencies:
-      '@types/webmidi': 2.0.6
-      jazz-midi: 1.7.6
-    dev: true
-    optional: true
 
   /klona/2.0.5:
     resolution: {integrity: sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==}
@@ -5193,10 +5154,6 @@ packages:
       redis-errors: 1.2.0
     dev: false
 
-  /regenerator-runtime/0.13.11:
-    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-    dev: true
-
   /regexp-tree/0.1.24:
     resolution: {integrity: sha512-s2aEVuLhvnVJW6s/iPgEGK6R+/xngd2jNQ+xy4bXNDKxZKJH6jpPHY6kVeVv1IeLCHgswRj+Kl3ELaDjG6V1iw==}
     hasBin: true
@@ -6051,6 +6008,16 @@ packages:
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  /v-tweakpane/0.2.0:
+    resolution: {integrity: sha512-/mXwVgGS4442OesjM/HIWShl7M94nGjFOZQDE0fnRFIhygHWR4qKhxWH2ajCQJbOKKeRmVQOUSiY5Bod/3Knbw==}
+    engines: {node: '>=16.0.0', npm: '>=8.19.2'}
+    peerDependencies:
+      vue: ^3.2.41
+    dependencies:
+      '@tweakpane/plugin-essentials': 0.1.5_tweakpane@3.1.1
+      tweakpane: 3.1.1
+    dev: false
+
   /validate-npm-package-license/3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
     dependencies:
@@ -6376,15 +6343,6 @@ packages:
   /webidl-conversions/7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
-    dev: true
-
-  /webmidi/3.0.22:
-    resolution: {integrity: sha512-vy1lPV/WPeI2G/+4poxYBQcRfiErIf8RDrGxw9/oKVOkP9OCNa1g/TArzQWmq7CG9+Lh0VJ+GLFOJsAHAX1a0w==}
-    engines: {node: '>=8.5'}
-    dependencies:
-      djipevents: 2.0.6
-    optionalDependencies:
-      jzz: 1.5.5
     dev: true
 
   /webpack-sources/3.2.3:
