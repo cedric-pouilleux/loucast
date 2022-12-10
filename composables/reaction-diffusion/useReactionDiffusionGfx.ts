@@ -53,6 +53,15 @@ export function useReactionDiffusionGfx (payload : Payload): ReactionDiffusionGf
     }
     window.addEventListener('mousemove', mouseMove)
     window.addEventListener('resize', resetTextureSizes)
+
+    const loader = new THREE.TextureLoader()
+
+    simulationUniforms.styleMapTexture.value = loader.load('https://creazilla-store.fra1.digitaloceanspaces.com/emojis/43417/white-large-square-emoji-clipart-xl.png', (texture) => {
+      simulationUniforms.styleMapTexture.value = texture
+      console.log(texture)
+      simulationUniforms.styleMapResolution.value = new THREE.Vector2(1920, 1280)
+    })
+
     resetTextureSizes()
   }
 
@@ -91,6 +100,8 @@ export function useReactionDiffusionGfx (payload : Payload): ReactionDiffusionGf
 
     simulationUniforms.f.value = params.f
     simulationUniforms.k.value = params.k
+    simulationUniforms.dA.value = params.dA
+    simulationUniforms.dB.value = params.dB
 
     if (params.mouseActive) {
       simulationUniforms.brushRadius.value = 30

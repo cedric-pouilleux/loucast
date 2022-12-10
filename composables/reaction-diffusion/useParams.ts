@@ -3,7 +3,7 @@ import { ReactionDiffusionParams } from '~/composables/reaction-diffusion/types/
 export function useParams (): ReactionDiffusionParams {
   return reactive({
     mouseActive: false,
-    f: 0.0540,
+    f: 0.0570,
     k: 0.0620,
     dA: 0.2097,
     dB: 0.105,

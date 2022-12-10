@@ -42,6 +42,14 @@ function paneCreated (pane: Pane) {
     min: 0.060,
     max: 0.065
   })
+  pane.addInput(params, 'dA', {
+    min: 0.2,
+    max: 0.3
+  })
+  pane.addInput(params, 'dB', {
+    min: 0.0,
+    max: 0.2
+  })
   pane.addInput(params, 'mouseActive')
   pane.addInput(params.gradientColors, 'color2RGB')
   pane.addButton({
