@@ -14,6 +14,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "netlify-identity-widget": "^1.9.2",
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.1.7",
     "three": "0.147.0",

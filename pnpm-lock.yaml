@@ -9,6 +9,7 @@ specifiers:
   eslint: ^8.28.0
   eslint-plugin-vue: ^9.8.0
   jsdom: ^20.0.3
+  netlify-identity-widget: ^1.9.2
   nuxt: 3.0.0
   nuxt-icon: ^0.1.7
   sass: ^1.56.1
@@ -21,6 +22,7 @@ specifiers:
   vitest: ^0.25.3
 
 dependencies:
+  netlify-identity-widget: 1.9.2
   nuxt: 3.0.0_42f8dc3424362476bea4de371e010708
   nuxt-icon: 0.1.7
   three: 0.147.0
@@ -4154,6 +4156,10 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+
+  /netlify-identity-widget/1.9.2:
+    resolution: {integrity: sha512-IbS1JHhs7BflCCvp3C9f6tmNSZqbyBhZ4Gs5+Qxt4IlPybTOVv0PqJ4TAsA7uxh1R+oXOAmk0OOMAkEaPYeCtA==}
+    dev: false
 
   /nitropack/1.0.0:
     resolution: {integrity: sha512-788lHgNgC+NKqecwFgMkAQTuTXwuh2hEgOk2sLwV3qPVUogxrl6P3m5eKdt6Mtzx+mlXIw0G/P90B5TNWEqDSQ==}
