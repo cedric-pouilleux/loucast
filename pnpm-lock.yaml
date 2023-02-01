@@ -6,6 +6,8 @@ specifiers:
   '@types/three': 0.146.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
+  '@vuelidate/core': ^2.0.0
+  '@vuelidate/validators': ^2.0.0
   eslint: ^8.28.0
   eslint-plugin-vue: ^9.8.0
   jsdom: ^20.0.3
@@ -20,15 +22,15 @@ specifiers:
   vite-plugin-fonts: ^0.6.0
   vite-plugin-glsl: ^0.5.4
   vitest: ^0.25.3
-  vuelidate: ^0.7.7
 
 dependencies:
+  '@vuelidate/core': 2.0.0
+  '@vuelidate/validators': 2.0.0
   netlify-identity-widget: 1.9.2
   nuxt: 3.0.0_42f8dc3424362476bea4de371e010708
   nuxt-icon: 0.1.7
   three: 0.147.0
   v-tweakpane: 0.2.0
-  vuelidate: 0.7.7
 
 devDependencies:
   '@nuxt/test-utils-edge': 3.0.1-rc.0-27828744.aa9aec1
@@ -1302,6 +1304,30 @@ packages:
 
   /@vue/shared/3.2.45:
     resolution: {integrity: sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==}
+    dev: false
+
+  /@vuelidate/core/2.0.0:
+    resolution: {integrity: sha512-xIFgdQlScO0aaSZ0wTGPJh8YcTMNAj5veI8yPgiAyxOT+GV7vNQFiU1vpYWCL4cklkkhYvRRSC2OEX7YOZNmPQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue-demi: 0.13.11
+    dev: false
+
+  /@vuelidate/validators/2.0.0:
+    resolution: {integrity: sha512-fQQcmDWfz7pyH5/JPi0Ng2GEgNK1pUHn/Z/j5rG/Q+HwhgIXvJblTPcZwKOj1ABL7V4UVuGKECvZCDHNGOwdrg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue-demi: 0.13.11
     dev: false
 
   /@vueuse/head/1.0.18_vue@3.2.45:
@@ -6285,6 +6311,19 @@ packages:
       ufo: 1.0.1
     dev: false
 
+  /vue-demi/0.13.11:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dev: false
+
   /vue-devtools-stub/0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: false
@@ -6324,11 +6363,6 @@ packages:
       '@vue/runtime-dom': 3.2.45
       '@vue/server-renderer': 3.2.45_vue@3.2.45
       '@vue/shared': 3.2.45
-    dev: false
-
-  /vuelidate/0.7.7:
-    resolution: {integrity: sha512-pT/U2lDI67wkIqI4tum7cMSIfGcAMfB+Phtqh2ttdXURwvHRBJEAQ0tVbUsW9Upg83Q5QH59bnCoXI7A9JDGnA==}
-    engines: {node: '>= 4.0.0', npm: '>= 3.0.0'}
     dev: false
 
   /w3c-xmlserializer/4.0.0:

@@ -26,4 +26,21 @@ h3 {
   background-color: #333;
   color: #fff;
   padding: 10px 16px;
+  border-radius: 3px;
+  &:disabled{
+    background-color: red;
+  }
+}
+
+input, textarea {
+  font-family: 'Space Grotesk', sans-serif;
+  display: block;
+  margin: 12px 0;
+  border-radius: 0;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  width: 100%;
+  &.error {
+    border-color: #ff0000;
+  }
 }
