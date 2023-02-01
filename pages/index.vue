@@ -2,21 +2,11 @@
   <div>
     <waiting-page />
     <div class="auth" data-netlify-identity-button />
-    <div id="netlify-modal" ref="modal" />
   </div>
 </template>
 
 <script setup lang="ts">
-import netlifyIdentity from 'netlify-identity-widget'
-import { onMounted } from 'vue'
 import WaitingPage from '~/components/landing-pages/WaitingPage.vue'
-
-onMounted(() => {
-  netlifyIdentity.init({
-    container: '#netlify-modal',
-    locale: 'fr'
-  })
-})
 
 useHead({
   title: 'Løucast - Welcome'
