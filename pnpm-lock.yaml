@@ -20,6 +20,7 @@ specifiers:
   vite-plugin-fonts: ^0.6.0
   vite-plugin-glsl: ^0.5.4
   vitest: ^0.25.3
+  vuelidate: ^0.7.7
 
 dependencies:
   netlify-identity-widget: 1.9.2
@@ -27,6 +28,7 @@ dependencies:
   nuxt-icon: 0.1.7
   three: 0.147.0
   v-tweakpane: 0.2.0
+  vuelidate: 0.7.7
 
 devDependencies:
   '@nuxt/test-utils-edge': 3.0.1-rc.0-27828744.aa9aec1
@@ -6322,6 +6324,11 @@ packages:
       '@vue/runtime-dom': 3.2.45
       '@vue/server-renderer': 3.2.45_vue@3.2.45
       '@vue/shared': 3.2.45
+    dev: false
+
+  /vuelidate/0.7.7:
+    resolution: {integrity: sha512-pT/U2lDI67wkIqI4tum7cMSIfGcAMfB+Phtqh2ttdXURwvHRBJEAQ0tVbUsW9Upg83Q5QH59bnCoXI7A9JDGnA==}
+    engines: {node: '>= 4.0.0', npm: '>= 3.0.0'}
     dev: false
 
   /w3c-xmlserializer/4.0.0:

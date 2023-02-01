@@ -12,12 +12,6 @@
 
 <script setup lang="ts"></script>
 
-<script>
-import ContactForm from '../../components/contact/ContactForm'
-export default {
-  components: { ContactForm }
-}
-</script>
 <style scoped lang="scss">
 .contact-page {
   h2 {

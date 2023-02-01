@@ -18,7 +18,8 @@
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.1.7",
     "three": "0.147.0",
-    "v-tweakpane": "^0.2.0"
+    "v-tweakpane": "^0.2.0",
+    "vuelidate": "^0.7.7"
   },
   "devDependencies": {
     "@nuxt/test-utils-edge": "3.0.1-rc.0-27828744.aa9aec1",
