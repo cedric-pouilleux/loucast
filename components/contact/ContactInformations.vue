@@ -50,8 +50,10 @@ const iconSize = '12px'
   ul {
     li {
       line-height: 40px;
-      font-size: 1.4em;
+      font-size: 1.3em;
       display: flex;
+      color: #333;
+      font-weight: 300;
       align-items: center;
 
       .schedule {

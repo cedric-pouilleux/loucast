@@ -3,8 +3,8 @@
     <div class="contact-page">
       <h2>Contact</h2>
       <section class="contact-page__wrapper">
-        <contact-informations />
         <contact-form />
+        <contact-informations />
       </section>
     </div>
   </NuxtLayout>
