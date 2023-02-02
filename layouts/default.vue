@@ -7,16 +7,39 @@
           About
         </NuxtLink>
         <NuxtLink to="/contact">
-          Contact
+          Contact & Booking
         </NuxtLink>
       </nav>
     </header>
-    <slot />
+    <div class="body-wrapper">
+      <div class="left" />
+      <div class="body-wrapper__content">
+        <slot />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+
+.loucast-app {
+
+  .body-wrapper {
+    display: flex;
+    .left {
+      height: calc(100vh - var(--header-height));
+      background-color: #333;
+      min-width: 235px;
+    }
+    &__content {
+      width: 100%;
+    }
+  }
+}
+
 header.header {
+  box-sizing: border-box;
+  height: var(--header-height);
   border-bottom: 1px solid #ccc;
   color: #fff;
   display: flex;
@@ -32,6 +55,8 @@ header.header {
   nav {
     margin-left: 20px;
     height: 100%;
+    display: flex;
+    align-items: center;
     a {
       color: #333;
       text-decoration: none;
