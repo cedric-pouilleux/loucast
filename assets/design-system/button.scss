@@ -1,0 +1,28 @@
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Space Grotesk,sans-serif;
+
+  &:hover {
+    background-color: #555;
+  }
+  &.btn-invalid:hover {
+    background-color: red;
+  }
+  &:disabled{
+    background-color: red;
+  }
+}
+
+
+@media screen and (max-width: 780px){
+  .btn-primary {
+    width: 100%;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+}

@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     '@/assets/fonts/space-grotesk/SpaceGrotesk.scss',
     '@/assets/fonts/open-sans/OpenSans.scss',
     '@/assets/reset.scss',
-    '@/assets/main.scss'
+    '@/assets/main.scss',
+    '@/assets/design-system/button.scss',
+    '@/assets/design-system/panel.scss'
   ],
   experimental: {
     reactivityTransform: true,

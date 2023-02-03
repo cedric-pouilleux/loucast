@@ -42,24 +42,6 @@ h3 {
   border-bottom: 1px solid #ccc;
 }
 
-.btn-primary {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  &:hover {
-    background-color: #555;
-  }
-  &.btn-invalid:hover {
-    background-color: red;
-  }
-  &:disabled{
-    background-color: red;
-  }
-}
-
 input, textarea, select {
   font-family: 'Space Grotesk', sans-serif;
   display: block;
@@ -77,38 +59,6 @@ input, textarea, select {
   &__row-field {
     display: flex;
     column-gap: 20px;
-  }
-}
-
-.panel {
-
-  &__content {
-    padding: 20px;
-  }
-
-  &.grey-3 {
-    h2 {
-      background-color: var(--color-grey-3);
-    }
-  }
-
-  &.grey-2 {
-    h2 {
-      background-color: var(--color-grey-2);
-    }
-  }
-
-  &.grey-1 {
-    h2 {
-      background-color: var(--color-grey-1);
-    }
-  }
-
-  h2 {
-    font-size: 1.4em;
-    font-weight: 300;
-    padding: 12px;
-    color: #fff;
   }
 }
 
@@ -135,27 +85,6 @@ ul.nav-list {
 }
 
 @media screen and (max-width: 780px){
-
-  .panel {
-    &.grey-1, &.grey-2, &.grey-3 {
-      h2 {
-        background-color: #fff;
-      }
-    }
-    h2 {
-      margin-top: 12px;
-      font-size: 1.2em;
-      color: #333;
-      text-align: center;
-    }
-  }
-
-  .btn-primary {
-    width: 100%;
-    font-size: 1.4em;
-    margin-bottom: 20px;
-  }
-
   .form {
     &__row-field {
       flex-direction: column;
