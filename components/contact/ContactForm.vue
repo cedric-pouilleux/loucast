@@ -1,6 +1,7 @@
 <template>
   <div class="contact-form">
-    <form @submit.prevent="handleSubmitForm">
+    <h2>Contact</h2>
+    <form class="contact-form__inner" @submit.prevent="handleSubmitForm">
       <div class="flex">
         <label>
           Your contact
@@ -117,7 +118,7 @@ const isBooking = computed(() => state.type === 'booking')
 async function handleSubmitForm () {
   v$.value.$touch()
   if (await v$.value.$validate()) {
-    console.log('is valid')
+    alert('send')
   }
 }
 
@@ -131,6 +132,18 @@ function handleTypeChange () {
 .contact-form {
   min-width: 500px;
   max-width: 500px;
+
+  &__inner {
+    padding: 12px 30px;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    font-weight: 300;
+    padding: 12px;
+    color: #fff;
+    background-color: #555;
+  }
 
   .contact-booking {
     border-radius: 4px;

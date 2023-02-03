@@ -36,7 +36,14 @@
     }
   }
 }
-
+.gfx {
+  background-color: #333;
+  height: 100vh;
+  &__header {
+    height: 40px;
+    background-color: #000;
+  }
+}
 header.header {
   box-sizing: border-box;
   height: var(--header-height);

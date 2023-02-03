@@ -1,10 +1,12 @@
 <template>
   <NuxtLayout>
     <div class="contact-page">
-      <h2>Contact</h2>
       <section class="contact-page__wrapper">
         <contact-form />
         <contact-informations />
+        <div class="gfx">
+          <div class="gfx__header" />
+        </div>
       </section>
     </div>
   </NuxtLayout>
@@ -14,19 +16,18 @@
 
 <style scoped lang="scss">
 .contact-page {
-  h2 {
-    font-size: 2em;
-    color: #333;
-    margin: 20px;
-    text-align: center;
-  }
   &__wrapper {
     display: flex;
     font-family: 'Space Grotesk', sans-serif;
-    justify-content: space-evenly;
-
-    > div {
-      padding: 0 20px;
+  }
+  .gfx {
+    background-color: #ebebeb;
+    height: calc(100vh - var(--header-height));
+    display: block;
+    width: 100%;
+    &__header {
+      height: 46px;
+      background-color: #777;
     }
   }
 }
