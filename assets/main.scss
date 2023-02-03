@@ -2,9 +2,12 @@
   --header-height: 60px;
 }
 
-$dp__font_family: 'Space Grotesk', sans-serif;
-$dp__font_size: 1em;
-$dp__time_font_size: 2em;
+$dp__font_family: Verdana;
+$dp__font_size: 12px;
+$dp__preview_font_size: 1.2em;
+$dp__time_font_size: 1.2em;
+$dp__time_inc_dec_button_size: 24px;
+
 @import '@vuepic/vue-datepicker/src/VueDatePicker/style/main.scss';
 
 * {
@@ -38,8 +41,16 @@ h3 {
 .btn-primary {
   background-color: #333;
   color: #fff;
+  border: none;
   padding: 10px 16px;
   border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #555;
+  }
+  &.btn-invalid:hover {
+    background-color: red;
+  }
   &:disabled{
     background-color: red;
   }

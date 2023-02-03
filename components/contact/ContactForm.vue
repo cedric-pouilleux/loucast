@@ -1,6 +1,6 @@
 <template>
   <div class="contact-form">
-    <form>
+    <form @submit.prevent="handleSubmitForm">
       <div class="flex">
         <label>
           Your contact
@@ -12,35 +12,48 @@
         </label>
         <label>
           Your phone number <span class="optional">optional</span>
-          <input v-model="v$.phone.$model" type="text" placeholder="Your phone number" :class="{ error: v$.name.$error}">
+          <input v-model="v$.phone.$model" type="text" placeholder="Your phone number" :class="{ error: v$.phone.$error}">
           <div v-if="v$.phone.$error" class="error">
             <Icon class="error-icon" name="mdi:alert-circle-outline" size="16px" />
-            {{ v$.name.phone[0].$message }}
+            {{ v$.phone.$errors[0].$message }}
           </div>
         </label>
       </div>
 
       <label class="contact-type">
         Contact type
-        <select v-model="v$.type.$model">
+        <select v-model="v$.type.$model" @change="handleTypeChange">
+          <option value="" disabled selected>Seleect contact type</option>
           <option value="message">Simple message</option>
           <option value="booking">Booking</option>
         </select>
+        <div v-if="v$.type.$error" class="error">
+          <Icon class="error-icon" name="mdi:alert-circle-outline" size="16px" />
+          {{ v$.type.$errors[0].$message }}
+        </div>
       </label>
 
-      <div class="flex">
+      <div v-if="isBooking" class="contact-booking flex">
         <label>
           Booking date
           <Datepicker v-model="v$.date.$model" placeholder="Select date" :enable-time-picker="false" />
+          <div v-if="v$.date.$error" class="error">
+            <Icon class="error-icon" name="mdi:alert-circle-outline" size="16px" />
+            {{ v$.date.$errors[0].$message }}
+          </div>
         </label>
         <label>
           Booking time range
           <Datepicker v-model="v$.timeRange.$model" time-picker range placeholder="Select the time range" />
+          <div v-if="v$.timeRange.$error" class="error">
+            <Icon class="error-icon" name="mdi:alert-circle-outline" size="16px" />
+            {{ v$.timeRange.$errors[0].$message }}
+          </div>
         </label>
       </div>
 
       <label>
-        Message title
+        Message title <span class="optional">optional</span>
         <input v-model="v$.title.$model" type="text" placeholder="Your message title">
       </label>
 
@@ -53,7 +66,7 @@
         </div>
       </label>
 
-      <button class="btn-primary" :disabled="!!v$.$errors.length">
+      <button class="btn-primary" :class="{ 'btn-invalid': v$.$invalid}">
         Submit
       </button>
     </form>
@@ -62,7 +75,7 @@
 
 <script setup lang="ts">
 import { useVuelidate } from '@vuelidate/core'
-import { required } from '@vuelidate/validators'
+import { required, requiredIf } from '@vuelidate/validators'
 import Datepicker from '@vuepic/vue-datepicker'
 
 const state = reactive({
@@ -70,7 +83,7 @@ const state = reactive({
   title: '',
   message: '',
   phone: '',
-  type: 'booking',
+  type: '',
   timeRange: '',
   date: ''
 })
@@ -90,13 +103,27 @@ const rules = computed(() => ({
     required
   },
   timeRange: {
+    requiredIfBooking: requiredIf(state.type === 'booking')
   },
   date: {
-
+    requiredIfBooking: requiredIf(state.type === 'booking')
   }
 }))
 
 const v$ = useVuelidate(rules, state)
+
+const isBooking = computed(() => state.type === 'booking')
+
+async function handleSubmitForm () {
+  v$.value.$touch()
+  if (await v$.value.$validate()) {
+    console.log('is valid')
+  }
+}
+
+function handleTypeChange () {
+  v$.value.$reset()
+}
 
 </script>
 
@@ -105,9 +132,10 @@ const v$ = useVuelidate(rules, state)
   min-width: 500px;
   max-width: 500px;
 
-  .contact-type {
-    background-color: #eee;
+  .contact-booking {
+    border-radius: 4px;
     padding: 16px 14px 4px 14px;
+    border: 1px solid #ebebeb;
     margin-bottom: 16px;
   }
 
@@ -124,8 +152,8 @@ const v$ = useVuelidate(rules, state)
 
   .error {
     color: #ff0000;
-    font-size: .8em;
     display: flex;
+    margin-bottom: 12px;
     align-items: center;
     .error-icon {
       margin-right: 8px;
