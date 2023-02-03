@@ -1,8 +1,8 @@
 <template>
-  <div class="contact-infos">
+  <div class="contact-infos panel grey-3">
     <h2>Informations</h2>
-    <div class="contact-infos__inner">
-      <ul>
+    <div class="panel__content">
+      <ul class="nav-list">
         <li>
           <a href="mailto:contact@loucast.fr">
             <Icon
@@ -59,49 +59,31 @@ const iconSize = '12px'
 <style scoped lang="scss">
 .contact-infos {
 
-  &__inner {
-    padding: 12px 30px;
+  .panel__content {
     width: 325px;
-  }
-
-  h2 {
-    font-size: 1.4em;
-    font-weight: 300;
-    padding: 12px;
-    color: #fff;
-    background-color: #666;
   }
 
   ul {
     li {
-      border-bottom: 1px solid #ebebeb;
-      line-height: 40px;
-      font-size: 1em;
-      color: #333;
-      font-weight: 300;
-      align-items: center;
-
-      a {
-        color: #333;
-        padding-left: 6px;
-        text-decoration: none;
-        display: block;
-      }
-
-      a:hover {
-        font-weight: 700;
-      }
-
       .schedule {
         font-size: .7em;
         margin: 0 12px;
         color: #555555;
       }
-
       .list-icon {
         margin-right: 10px;
       }
     }
   }
+}
+
+@media screen and (max-width: 780px){
+  .contact-infos {
+
+    .panel__content {
+      width: auto;
+    }
+  }
+
 }
 </style>

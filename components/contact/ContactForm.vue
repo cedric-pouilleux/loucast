@@ -1,8 +1,8 @@
 <template>
-  <div class="contact-form">
+  <div class="contact-form panel grey-2">
     <h2>Contact</h2>
-    <form class="contact-form__inner" @submit.prevent="handleSubmitForm">
-      <div class="flex">
+    <form class="panel__content" @submit.prevent="handleSubmitForm">
+      <div class="form__row-field">
         <label>
           Your contact
           <input v-model="v$.name.$model" type="text" placeholder="Name and lastname" :class="{ error: v$.name.$error}">
@@ -34,7 +34,7 @@
         </div>
       </label>
 
-      <div v-if="isBooking" class="contact-booking flex">
+      <div v-if="isBooking" class="contact-booking form__row-field">
         <label>
           Booking date
           <Datepicker v-model="v$.date.$model" placeholder="Select date" :enable-time-picker="false" />
@@ -129,20 +129,12 @@ function handleTypeChange () {
 </script>
 
 <style scoped lang="scss">
-.contact-form {
+.panel {
+
   min-width: 500px;
-  max-width: 500px;
 
   &__inner {
     padding: 12px 30px;
-  }
-
-  h2 {
-    font-size: 1.4em;
-    font-weight: 300;
-    padding: 12px;
-    color: #fff;
-    background-color: #555;
   }
 
   .contact-booking {
@@ -150,11 +142,6 @@ function handleTypeChange () {
     padding: 16px 14px 4px 14px;
     border: 1px solid #ebebeb;
     margin-bottom: 16px;
-  }
-
-  .flex {
-    display: flex;
-    column-gap: 20px;
   }
 
   .optional {
@@ -186,6 +173,13 @@ function handleTypeChange () {
     textarea {
       min-height: 100px;
     }
+  }
+}
+
+@media screen and (max-width: 780px){
+  .panel {
+    min-width: auto;
+    max-width: auto;
   }
 }
 </style>

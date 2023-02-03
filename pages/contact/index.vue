@@ -31,4 +31,13 @@
     }
   }
 }
+
+@media screen and (max-width: 780px){
+  .contact-page {
+    &__wrapper {
+      flex-direction: column;
+    }
+    .gfx { display: none }
+  }
+}
 </style>

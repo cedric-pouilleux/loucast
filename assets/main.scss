@@ -1,5 +1,8 @@
 :root {
   --header-height: 60px;
+  --color-grey-1: #333;
+  --color-grey-2: #555;
+  --color-grey-3: #777;
 }
 
 $dp__font_family: Verdana;
@@ -67,5 +70,95 @@ input, textarea, select {
   width: 100%;
   &.error {
     border-color: #ff0000;
+  }
+}
+
+.form {
+  &__row-field {
+    display: flex;
+    column-gap: 20px;
+  }
+}
+
+.panel {
+
+  &__content {
+    padding: 20px;
+  }
+
+  &.grey-3 {
+    h2 {
+      background-color: var(--color-grey-3);
+    }
+  }
+
+  &.grey-2 {
+    h2 {
+      background-color: var(--color-grey-2);
+    }
+  }
+
+  &.grey-1 {
+    h2 {
+      background-color: var(--color-grey-1);
+    }
+  }
+
+  h2 {
+    font-size: 1.4em;
+    font-weight: 300;
+    padding: 12px;
+    color: #fff;
+  }
+}
+
+ul.nav-list {
+  li {
+    border-bottom: 1px solid #ebebeb;
+    line-height: 40px;
+    font-size: 1em;
+    color: #333;
+    font-weight: 300;
+    align-items: center;
+
+    a {
+      color: #333;
+      padding-left: 6px;
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover {
+       font-weight: 700;
+    }
+  }
+}
+
+@media screen and (max-width: 780px){
+
+  .panel {
+    &.grey-1, &.grey-2, &.grey-3 {
+      h2 {
+        background-color: #fff;
+      }
+    }
+    h2 {
+      margin-top: 12px;
+      font-size: 1.2em;
+      color: #333;
+      text-align: center;
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    &__row-field {
+      flex-direction: column;
+    }
   }
 }

@@ -36,6 +36,7 @@
     }
   }
 }
+
 .gfx {
   background-color: #333;
   height: 100vh;
@@ -44,7 +45,8 @@
     background-color: #000;
   }
 }
-header.header {
+
+.header {
   box-sizing: border-box;
   height: var(--header-height);
   border-bottom: 1px solid #ccc;
@@ -69,6 +71,31 @@ header.header {
       text-decoration: none;
       font-weight: 700;
       margin: 0 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 780px){
+  .loucast-app {
+    .body-wrapper {
+      flex-direction: column;
+      .left {
+        display: none;
+      }
+      &__content {
+        width: auto;
+      }
+    }
+  }
+  .header {
+    height: auto;
+    border: none;
+    flex-direction: column;
+    h1 {
+      border: none;
+    }
+    nav {
+      margin-bottom: 20px;
     }
   }
 }
