@@ -23,7 +23,7 @@
 
       <label class="contact-type">
         Contact type
-        <select v-model="v$.type.$model" @change="handleTypeChange">
+        <select v-model="v$.type.$model" :class="{ error: v$.type.$error}" @change="handleTypeChange">
           <option value="" disabled selected>Seleect contact type</option>
           <option value="message">Simple message</option>
           <option value="booking">Booking</option>
@@ -60,7 +60,7 @@
 
       <label>
         Message
-        <textarea v-model="v$.message.$model" placeholder="Your message" />
+        <textarea v-model="v$.message.$model" placeholder="Your message" :class="{ error: v$.message.$error}" />
         <div v-if="v$.message.$error" class="error">
           <Icon class="error-icon" name="mdi:alert-circle-outline" size="16px" />
           {{ v$.message.$errors[0].$message }}
