@@ -87,6 +87,7 @@
       }
     }
   }
+
   .header {
     height: auto;
     border: none;
@@ -95,7 +96,14 @@
       border: none;
     }
     nav {
-      margin-bottom: 20px;
+      margin:0 0 20px 0;
+      height: auto;
+      flex-direction: column;
+      width: 100%;
+      line-height: 30px;
+      a {
+        text-decoration: underline;
+      }
     }
   }
 }

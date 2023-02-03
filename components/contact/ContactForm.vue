@@ -59,7 +59,7 @@
       </label>
 
       <label>
-        Message *
+        Message
         <textarea v-model="v$.message.$model" placeholder="Your message" />
         <div v-if="v$.message.$error" class="error">
           <Icon class="error-icon" name="mdi:alert-circle-outline" size="16px" />
