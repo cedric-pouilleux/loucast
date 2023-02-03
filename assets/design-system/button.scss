@@ -22,7 +22,16 @@
 @media screen and (max-width: 780px){
   .btn-primary {
     width: 100%;
+    background-color: #fff;
+    color: #333;
     font-size: 1.4em;
     margin-bottom: 20px;
+    &:hover {
+      background-color: #ebebeb;
+    }
+    &.btn-invalid:hover {
+      color: red;
+      background-color: #ebebeb;
+    }
   }
 }
