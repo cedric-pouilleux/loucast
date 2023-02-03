@@ -1,0 +1,19 @@
+.main-nav {
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 0 16px;
+    line-height: 32px;
+    &.router-link-active {
+      color: #cdb420
+    }
+    &:hover {
+      color: #ccc;
+      text-decoration: underline;
+    }
+  }
+}

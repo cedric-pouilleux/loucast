@@ -1,0 +1,14 @@
+.form {
+  &__row-field {
+    display: flex;
+    column-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .form {
+    &__row-field {
+      flex-direction: column;
+    }
+  }
+}

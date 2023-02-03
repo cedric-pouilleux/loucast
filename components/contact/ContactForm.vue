@@ -129,9 +129,11 @@ function handleTypeChange () {
 </script>
 
 <style scoped lang="scss">
-.panel {
+.contact-form {
 
-  min-width: 500px;
+  flex: 2;
+  min-width: 400px;
+  max-width: 600px;
 
   &__inner {
     padding: 12px 30px;
@@ -177,9 +179,8 @@ function handleTypeChange () {
 }
 
 @media screen and (max-width: 780px){
-  .panel {
-    min-width: auto;
-    max-width: auto;
+  .contact-form {
+    max-width: none;
   }
 }
 </style>

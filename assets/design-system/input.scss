@@ -1,0 +1,12 @@
+input, textarea, select {
+  font-family: 'Space Grotesk', sans-serif;
+  display: block;
+  margin: 12px 0;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  width: 100%;
+  &.error {
+    border-color: #ff0000;
+  }
+}

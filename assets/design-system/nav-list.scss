@@ -1,0 +1,21 @@
+ul.nav-list {
+  li {
+    border-bottom: 1px solid #ebebeb;
+    line-height: 40px;
+    font-size: 1em;
+    color: #333;
+    font-weight: 300;
+    align-items: center;
+
+    a {
+      color: #333;
+      padding-left: 6px;
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover {
+      font-weight: 700;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 <template>
   <div class="loucast-app">
-    <header class="header">
+    <div class="left">
       <h1>LØUCAST</h1>
-      <nav>
+      <nav class="main-nav">
         <NuxtLink to="/">
           About
         </NuxtLink>
@@ -10,99 +10,85 @@
           Contact & Booking
         </NuxtLink>
       </nav>
-    </header>
+      <select class="select-nav" @change="handleNavChange">
+        <option value="/">
+          About
+        </option>
+        <option value="contact" selected>
+          Contact & Booking
+        </option>
+      </select>
+    </div>
     <div class="body-wrapper">
-      <div class="left" />
-      <div class="body-wrapper__content">
-        <slot />
-      </div>
+      <header class="header-baseline">
+        Techno Paris
+      </header>
+      <slot />
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<script lang="ts" setup>
+const router = useRouter()
 
+function handleNavChange (event: Event) {
+  router.push((event.target as HTMLSelectElement).value)
+}
+</script>
+
+<style scoped lang="scss">
 .loucast-app {
+  display: flex;
+  height: 100vh;
 
   .body-wrapper {
-    display: flex;
-    .left {
-      height: calc(100vh - var(--header-height));
+    width: 100%;
+    .header-baseline {
+      font-size: 1.2em,;
+      font-weight: 300;
+      padding-left: 12px;
+      color: #fff;
       background-color: #333;
-      min-width: 235px;
-    }
-    &__content {
-      width: 100%;
+      line-height: 64px;
     }
   }
-}
 
-.gfx {
-  background-color: #333;
-  height: 100vh;
-  &__header {
-    height: 40px;
-    background-color: #000;
-  }
-}
-
-.header {
-  box-sizing: border-box;
-  height: var(--header-height);
-  border-bottom: 1px solid #ccc;
-  color: #fff;
-  display: flex;
-  align-items: center;
-
-  h1 {
-    color: #333;
-    padding: 12px 18px;
-    font-size: 46px;
-    border-right: 1px solid #ccc;
-  }
-
-  nav {
-    margin-left: 20px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 700;
-      margin: 0 16px;
+  .left {
+    background-color: #333;
+    .select-nav {
+      display: none;
+      background-color: #333;
+      border-color: #555;
+      color: #fff;
+      margin-right:12px;
+    }
+    h1 {
+      color: #fff;
+      margin: 12px 24px;
+      letter-spacing: 6px;
+      font-size: 2.6em;
     }
   }
 }
 
 @media screen and (max-width: 780px){
   .loucast-app {
-    .body-wrapper {
-      flex-direction: column;
-      .left {
+    flex-direction: column;
+    .left {
+      display: flex;
+      .main-nav {
         display: none;
       }
-      &__content {
-        width: auto;
+      .select-nav {
+        display: block;
       }
     }
-  }
-
-  .header {
-    height: auto;
-    border: none;
-    flex-direction: column;
-    h1 {
-      border: none;
-    }
-    nav {
-      margin:0 0 20px 0;
-      height: auto;
+    .body-wrapper {
       flex-direction: column;
-      width: 100%;
-      line-height: 30px;
-      a {
-        text-decoration: underline;
+      .header-baseline {
+        padding: 0 24px 12px 24px;
+        font-size: 1em;
+        line-height: 0;
       }
     }
   }

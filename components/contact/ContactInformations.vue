@@ -59,9 +59,8 @@ const iconSize = '12px'
 <style scoped lang="scss">
 .contact-infos {
 
-  .panel__content {
-    width: 325px;
-  }
+  min-width: 325px;
+  max-width: 450px;
 
   ul {
     li {

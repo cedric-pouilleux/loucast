@@ -8,7 +8,11 @@ export default defineNuxtConfig({
     '@/assets/reset.scss',
     '@/assets/main.scss',
     '@/assets/design-system/button.scss',
-    '@/assets/design-system/panel.scss'
+    '@/assets/design-system/panel.scss',
+    '@/assets/design-system/nav-list.scss',
+    '@/assets/design-system/form.scss',
+    '@/assets/design-system/input.scss',
+    '@/assets/design-system/main-nav.scss'
   ],
   experimental: {
     reactivityTransform: true,
