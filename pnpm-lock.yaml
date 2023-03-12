@@ -15,6 +15,7 @@ specifiers:
   netlify-identity-widget: ^1.9.2
   nuxt: 3.0.0
   nuxt-icon: ^0.1.7
+  prisma: ^4.11.0
   sass: ^1.56.1
   three: 0.147.0
   typescript: ^4.9.3
@@ -43,6 +44,7 @@ devDependencies:
   eslint: 8.28.0
   eslint-plugin-vue: 9.8.0_eslint@8.28.0
   jsdom: 20.0.3
+  prisma: 4.11.0
   sass: 1.56.1
   typescript: 4.9.3
   vite-plugin-eslint: 1.8.1_eslint@8.28.0
@@ -783,6 +785,11 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.4.1
+    dev: true
+
+  /@prisma/engines/4.11.0:
+    resolution: {integrity: sha512-0AEBi2HXGV02cf6ASsBPhfsVIbVSDC9nbQed4iiY5eHttW9ZtMxHThuKZE1pnESbr8HRdgmFSa/Kn4OSNYuibg==}
+    requiresBuild: true
     dev: true
 
   /@rollup/plugin-alias/4.0.2_rollup@2.79.1:
@@ -5096,6 +5103,15 @@ packages:
     resolution: {integrity: sha512-6UqkYefdogmzqAZWzJ7laYeJnaXDy2/J+ZqiiMtS7t7OfpXWTlaeGMwX8U6EFvPV/YWWEKRkS8hKS4k60WHTOg==}
     engines: {node: ^14.13.1 || >=16.0.0}
     dev: false
+
+  /prisma/4.11.0:
+    resolution: {integrity: sha512-4zZmBXssPUEiX+GeL0MUq/Yyie4ltiKmGu7jCJFnYMamNrrulTBc+D+QwAQSJ01tyzeGHlD13kOnqPwRipnlNw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 4.11.0
+    dev: true
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}

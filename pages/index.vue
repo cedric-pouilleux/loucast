@@ -11,6 +11,8 @@ import WaitingPage from '~/components/landing-pages/WaitingPage.vue'
 useHead({
   title: 'Løucast - Welcome'
 })
+
+fetch('/.netlify/functions/user')
 </script>
 
 <style lang="scss">
