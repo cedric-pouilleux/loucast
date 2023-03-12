@@ -12,7 +12,7 @@ useHead({
   title: 'Løucast - Welcome'
 })
 
-fetch('/.netlify/functions/user')
+fetch('https://loucast.fr/.netlify/functions/user')
 </script>
 
 <style lang="scss">
